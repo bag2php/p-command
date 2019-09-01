@@ -13,7 +13,6 @@ const BAG2_P_CMD_VERSION = '0.1.0';
 $options = \getopt('d:f:v:B:E:F::R:', ['help', 'version'], $optind);
 $rest_args = \count($argv) > $optind ? \array_slice($argv, $optind) : [];
 
-global $OFS;
 $OFS = ' ';
 $ORS = PHP_EOL;
 $FS = '/\s/';
@@ -96,7 +95,7 @@ foreach ($rest_args as $a) {
 }
 unset($rest_args, $a, $matches, $test);
 
-${"\0output\0"} = function($value): string {
+${"\0output\0"} = function($value) use ($OFS): string {
     if ($value === null) {
         return '';
     }
@@ -111,7 +110,7 @@ ${"\0output\0"} = function($value): string {
             $values[] = (string)$v;
         }
 
-        return \implode($GLOBALS['OFS'], $values);
+        return \implode($OFS, $values);
     }
 
     return (string)$value;
