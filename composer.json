@@ -1,0 +1,6 @@
+{
+    "name": "bag2php/p-command",
+    "description": "AWK like PHP wrapper for command line",
+    "license": "MPL-2.0",
+    "bin": ["p"]
+}
