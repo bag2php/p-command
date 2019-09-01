@@ -74,7 +74,7 @@ ${"\0codes\0"} = \array_map(function($code) {
 ${"\0files\0"} = ['-' => STDIN];
 
 foreach ($rest_args as $a) {
-    if (preg_match('/\A(?<test>[^{}]*){(?<code>.+)\}\z/', $a, $matches)) {
+    if (\preg_match('/\A(?<test>[^{}]*){(?<code>.+)\}\z/', $a, $matches)) {
         $test = \trim($matches['test']);
         if ($test === '') {
             $test = 'true';
@@ -90,7 +90,7 @@ foreach ($rest_args as $a) {
             'code' => "return {$matches['code']};",
         ];
     } else {
-        ${"\0files\0"}[$a] = fopen($a, 'r');
+        ${"\0files\0"}[$a] = \fopen($a, 'r');
     }
 }
 unset($rest_args, $a, $matches, $test);
@@ -124,7 +124,7 @@ foreach (${"\0files\0"} as $FILENAME => $fp) {
         $argn = \rtrim($line, $ORS);
         $F0 = ${0} = $argn;
         $F = \preg_split($FS, $argn) ?: [];
-        array_unshift($F, $F0);
+        \array_unshift($F, $F0);
         // extract($F, \EXTR_PREFIX_ALL, 'F');
         // extract($F, \EXTR_PREFIX_ALL);
         $NF = \count($F);
