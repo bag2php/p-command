@@ -64,7 +64,7 @@ ${"\0codes\0"} = \array_map(function($code) {
     if (\strpos($code, ':') === false) {
         return [
             'test' => 'return true;',
-            'code' => "return {$code};"
+            'code' => "{$code};"
         ];
     }
 
