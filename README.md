@@ -1,10 +1,10 @@
 # p - AWK like PHP wrapper for command line
 
-`p` command is inspired by [AWK], [rb] and [py].
+`p` command is inspired by [AWK], [rb] and [opy].
 
 [AWK]: http://www.awklang.org/
 [rb]: https://github.com/thisredone/rb
-[py]: https://github.com/ryuichiueda/py
+[opy]: https://github.com/ryuichiueda/opy
 
 ## Special variable
 
